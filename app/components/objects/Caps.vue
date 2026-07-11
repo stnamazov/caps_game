@@ -40,8 +40,12 @@ const generateServerData = (activeCapIds: number[], flipPercentage = 10): CapSer
   }))
 }
 
-const handleGlobalClick = () => {
+const handleGlobalClick = (event: PointerEvent) => {
+  // Проверяем getIsAnimating
   if (getIsAnimating()) return
+
+  // Защита от ложных срабатываний (например, если кликнули правой кнопкой мыши)
+  if (event.button !== 0) return 
 
   const activeCapIds = getActiveCapIds()
   if (activeCapIds.length === 0) return
@@ -52,11 +56,11 @@ const handleGlobalClick = () => {
 
 onMounted(() => {
   resetStackToWait()
-  window.addEventListener('click', handleGlobalClick)
+  window.addEventListener('pointerdown', handleGlobalClick)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('click', handleGlobalClick)
+  window.removeEventListener('pointerdown', handleGlobalClick)
 })
 </script>
 
