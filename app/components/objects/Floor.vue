@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { watch } from 'vue'
 import { useLoader } from '@tresjs/core'
 import * as THREE from 'three'
 

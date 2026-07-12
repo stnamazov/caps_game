@@ -5,7 +5,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       ],
-      title: 'caps'
+      title: 'Вебсы'
     },
   },
   css: ['./app/assets/css/main.css'],

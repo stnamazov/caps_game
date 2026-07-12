@@ -27,6 +27,20 @@ export function useCapsSounds() {
     }
   }
 
+  // Метод для принудительного "прогрева" аудио по первому HTML-клику
+  function unlockMobileAudio() {
+    resumeAudioContext()
+    // Создаем микро-звук для разблокировки iOS/Android
+    const ctx = Howler.ctx
+    if (ctx) {
+      const buffer = ctx.createBuffer(1, 1, 22050)
+      const source = ctx.createBufferSource()
+      source.buffer = buffer
+      source.connect(ctx.destination)
+      source.start(0)
+    }
+  }
+
   function playFirstHit() {
     const index = Math.floor(Math.random() * 3) + 1
     chipsSound.play(`first_hit_${index}`)
@@ -43,6 +57,7 @@ export function useCapsSounds() {
 
   return {
     resumeAudioContext,
+    unlockMobileAudio,
     playFirstHit,
     playSlamFlat,
     playDribble,
