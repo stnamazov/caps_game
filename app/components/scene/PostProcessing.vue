@@ -5,8 +5,8 @@ import { EffectComposerPmndrs, TiltShiftPmndrs, BrightnessContrastPmndrs } from 
 <template>
     <Suspense>
         <EffectComposerPmndrs>
-        <TiltShiftPmndrs :focusArea="0.85" :feather="0.6" />
-        <BrightnessContrastPmndrs :brightness="0.05" :contrast="0.45" />
+            <TiltShiftPmndrs :focusArea="0.6" :feather="0.5" />
+            <BrightnessContrastPmndrs :brightness="0.01" :contrast="0.25" />
         </EffectComposerPmndrs>
     </Suspense>
 </template>

@@ -1,6 +1,26 @@
+@font-face {
+    font-family: "Guildenstern NBP";
+    src: url('../fonts/GuildensternNbp.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
 @import "tailwindcss";
 
 body{
     background: #000;
     color: #fff;
+    font-family: "Guildenstern NBP", sans-serif;
+}
+
+@property --eye-top {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --eye-bottom {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
 }
